@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "iPhone 13 Pro",
+    "category": "Электроника",
+    "price": 75000,
+    "description": "Идеальное состояние, 256 ГБ",
+    "city": "Москва",
+    "condition": "Б/У",
+    "image": "",
+    "sellerId": 1
+  },
+  {
+    "id": 2,
+    "title": "Диван угловой",
+    "category": "Мебель",
+    "price": 45000,
+    "description": "Удобный серый диван",
+    "city": "Санкт-Петербург",
+    "condition": "Новое",
+    "image": "",
+    "sellerId": 2
+  },
+  {
+    "id": 3,
+    "title": "PlayStation 5",
+    "category": "Электроника",
+    "price": 49999,
+    "description": "С геймпадами и играми",
+    "city": "Казань",
+    "condition": "Новое",
+    "image": "",
+    "sellerId": 3
+  }
+]

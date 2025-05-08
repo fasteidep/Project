@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abito</title>
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="/">Abito</a></div>
+    <div class="search-group">
+      <input type="text" placeholder="Поиск по объявлениям..." id="searchInput">
+      <button class="filter-btn">Фильтры</button>
+    </div>
+    <div class="profile">
+      <img src="https://via.placeholder.com/36" alt="Profile">
+    </div>
+  </header>
+
+  <div class="filters" id="filterPanel">
+    <div class="row">
+      <div class="field">
+        <select id="categoryFilter">
+          <option value="">Все категории</option>
+          <option>Электроника</option>
+          <option>Мебель</option>
+          <option>Одежда</option>
+        </select>
+      </div>
+      <div class="field"><input type="number" placeholder="Цена от" id="priceMin"></div>
+      <div class="field"><input type="number" placeholder="Цена до" id="priceMax"></div>
+      <div class="field">
+        <select id="conditionFilter">
+          <option value="">Любое состояние</option>
+          <option>Новое</option>
+          <option>Б/У</option>
+        </select>
+      </div>
+      <div class="field"><input type="text" placeholder="Город" id="cityFilter"></div>
+      <button class="apply-btn" id="applyFilters">Применить</button>
+    </div>
+  </div>
+
+  <main>
+    <div class="listings" id="adsContainer"></div>
+  </main>
+
+  <footer>
+    
+  </footer>
+
+  <script type="module" src="/src/scripts/dataLoader.js"></script>
+  <script type="module" src="/src/scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+:root {
+    --bg: #fff;
+    --text: #222;
+    --text-muted: #666;
+    --primary: #222;
+    --secondary: #555;
+    --border-radius: 8px;
+    --transition: 0.25s ease;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-dark: rgba(0, 0, 0, 0.1);
+    --font-sans: 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--bg);
+  box-shadow: 0 1px 4px var(--shadow-light);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.search-group {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.search-group input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--secondary);
+  border-radius: var(--border-radius);
+  transition: border-color var(--transition);
+}
+
+.search-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+.filter-btn {
+  margin-left: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: var(--primary);
+  color: #fff;
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+.filter-btn:hover {
+  background: var(--bg);
+  color: var(--primary);
+}
+.profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+.profile img { width: 100%; height: 100%; object-fit: cover; }
+/* Панель фильтров */
+.filters {
+  background: var(--bg);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height var(--transition), padding var(--transition);
+  border-top: 1px solid var(--shadow-light);
+}
+.filters.open {
+  max-height: 200px;
+  padding: 1rem 2rem;
+}
+.filters .row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filters .field {
+  flex: 1;
+  min-width: 140px;
+}
+.filters input,
+.filters select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--secondary);
+  border-radius: var(--border-radius);
+  transition: border-color var(--transition);
+}
+.filters input:focus,
+.filters select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+.apply-btn {
+  padding: 0.6rem 1.25rem;
+  background: var(--primary);
+  color: #fff;
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+.apply-btn:hover {
+  background: var(--bg);
+  color: var(--primary);
+}
+/* Сетка объявлений */
+.listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.card {
+  background: var(--bg);
+  border: 1px solid var(--shadow-light);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 8px var(--shadow-light);
+}
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.card-body {
+  padding: 1rem;
+}
+.card-title { font-size: 1.1rem; margin-bottom: 0.5rem; }
+.card-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+.card-price { font-weight: bold; color: var(--primary); font-size: 1rem; }
+/* Футер */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--shadow-light);
+}
+/* Адаптив */
+@media (max-width: 600px) {
+  .search-group { margin: 1rem 0; flex-direction: column; }
+  .filter-btn { margin: 0.5rem 0 0; }
+}

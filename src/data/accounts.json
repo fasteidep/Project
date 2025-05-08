@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "username": "TechMaster",
+        "avatar": "https://via.placeholder.com/60",
+        "rating": 5,
+        "reviews": [
+          {
+            "userId": 2,
+            "text": "Отличный продавец!",
+            "rating": 5
+          }
+        ]
+    },
+    {
+        "id": 2,
+        "username": "user2",
+        "avatar": "https://via.placeholder.com/36",
+        "rating": 0,
+        "reviews": []
+    },
+    {
+        "id": 3,
+        "username": "user3",
+        "avatar": "https://via.placeholder.com/36",
+        "rating": 0,
+        "reviews": [
+            {
+                "userId": 2,
+                "text": "Ужасный продавец! -rep",
+                "rating": 1
+            }
+        ]
+    }
+  ]
