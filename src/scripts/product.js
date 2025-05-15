@@ -1,5 +1,6 @@
 import { fetchAds } from './dataLoader.js';
 import { fetchAccounts } from './dataLoader.js';
+import { initHeader } from './header.js';
 
 const urlParams = new URLSearchParams(window.location.search);
 const adId = urlParams.get('id');
@@ -45,11 +46,8 @@ function renderProduct(ad, seller) {
             <img src="${seller.avatar}" alt="${seller.username}">
           </div>
           <div class="seller-info">
-            <div class="seller-name">${seller.username}</div>
-            <div class="seller-rating">
-              Рейтинг: ${calculateRatingStars(seller.rating)}
-              (${seller.rating.toFixed(1)})
-            </div>
+            <a href="profile.html?id=${ad.sellerId}" class="seller-name">${seller.username}</a>
+            <div class="seller-rating">Рейтинг: ${calculateRatingStars(seller.rating)}</div>
           </div>
         </div>
         
@@ -65,5 +63,10 @@ function calculateRatingStars(rating) {
   return '★'.repeat(fullStars) + halfStar + '☆'.repeat(5 - Math.ceil(rating));
 }
 
-// Инициализация
+
 loadProductData();
+
+document.addEventListener('DOMContentLoaded', () => {
+  initHeader();
+  loadProductData();
+});

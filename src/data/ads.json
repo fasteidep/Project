@@ -1,14 +1,17 @@
 [
   {
     "id": 1,
-    "title": "iPhone 13 Pro",
+    "title": "iPhone 15 Pro",
     "category": "Электроника",
     "price": 75000,
-    "description": "Идеальное состояние, 256 ГБ",
+    "description": "Новый смартфон в коробке",
     "city": "Москва",
-    "condition": "Б/У",
-    "image": "",
-    "sellerId": 1
+    "condition": "Новое",
+    "image": "/images/ads/iphone15pro_id1.png",
+    "sellerId": 1,
+    "date": "2024-05-01",
+    "isActive": true,
+    "views": 45
   },
   {
     "id": 2,
@@ -18,18 +21,10 @@
     "description": "Удобный серый диван",
     "city": "Санкт-Петербург",
     "condition": "Новое",
-    "image": "",
-    "sellerId": 2
-  },
-  {
-    "id": 3,
-    "title": "PlayStation 5",
-    "category": "Электроника",
-    "price": 49999,
-    "description": "С геймпадами и играми",
-    "city": "Казань",
-    "condition": "Новое",
-    "image": "",
-    "sellerId": 3
+    "image": "/images/ads/divanugl_id2.png",
+    "sellerId": 2,
+    "date": "2024-05-10",
+    "isActive": true,
+    "views": 28
   }
 ]

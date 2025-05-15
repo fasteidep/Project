@@ -1,5 +1,6 @@
 import { fetchAds } from './dataLoader.js';
-
+import { initHeader } from './header.js';
+document.addEventListener('DOMContentLoaded', initHeader);
 let allAds = [];
 const adsContainer = document.getElementById('adsContainer');
 const searchInput = document.getElementById('searchInput');
@@ -7,26 +8,33 @@ const filterBtn = document.querySelector('.filter-btn');
 const filterPanel = document.getElementById('filterPanel');
 
 async function init() {
-  try {
-    allAds = await fetchAds();
-    renderAds(allAds);
-    setupEventListeners();
-  } catch (error) {
-    console.error('Ошибка инициализации:', error);
-  }
+    try {
+      allAds = await fetchAds();
+      if(allAds.length === 0) {
+        adsContainer.innerHTML = '<p>Объявления не найдены</p>';
+        return;
+      }
+      renderAds(allAds);
+      setupEventListeners();
+    } catch (error) {
+      console.error('Ошибка инициализации:', error);
+      adsContainer.innerHTML = '<p>Ошибка загрузки данных</p>';
+    }
 }
 
+
 function renderAds(ads) {
-  adsContainer.innerHTML = ads.map(ad => `
-    <div class="card" data-ad-id="${ad.id}">
-      <img src="${ad.image}" alt="${ad.title}">
-      <div class="card-body">
-        <div class="card-title">${ad.title}</div>
-        <div class="card-desc">${ad.category}, ${ad.condition}</div>
-        <div class="card-price">${ad.price.toLocaleString()} ₽</div>
+    adsContainer.innerHTML = ads.map(ad => `
+      <div class="card" data-ad-id="${ad.id}">
+        <img src="${ad.image}" alt="${ad.title}">
+        <div class="card-body">
+          <div class="card-title">${ad.title}</div>
+          <div class="card-desc">${ad.category}, ${ad.condition}</div>
+          <div class="card-price">${ad.price.toLocaleString()} ₽</div>
+          ${ad.isActive ? '<div class="card-status">Активно</div>' : ''}
+        </div>
       </div>
-    </div>
-  `).join('');
+    `).join('');
 
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', () => {

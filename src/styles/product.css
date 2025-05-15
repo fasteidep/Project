@@ -62,18 +62,20 @@ header {
     color: var(--primary); 
 }
 
-.profile { 
-    width: 36px; 
-    height: 36px; 
-    border-radius: 50%; 
-    overflow: hidden; 
-    margin-left: 1rem; 
+.profile-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  margin-left: 1rem;
+  flex-shrink: 0;
 }
 
-.profile img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
+.profile-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 main { 
@@ -187,9 +189,9 @@ main {
 }
 
 .message-btn:hover { 
-    background:var(--bg); 
-    color:var(--primary); 
-    border:1px solid var(--primary); 
+  background:#bebebe; 
+  color:var(--primary); 
+
 }
 
 footer {

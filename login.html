@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abito</title>
+  <link rel="stylesheet" href="/src/styles/main.css">
+  <link rel="stylesheet" href="/src/styles/auth.css">
+</head>
+<body>
+  <header>
+    <div class="logo"><a href="/">Abito</a></div>
+  </header>
+
+  <main>
+    <div class="auth-container">
+        <div class="tabs">
+          <div class="tab active" data-tab="login">Вход</div>
+          <div class="tab" data-tab="register">Регистрация</div>
+        </div>
+        <div class="form-container">
+          <form id="login-form" class="active">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" name="login-email" placeholder="you@example.com" required>
+            <label for="login-password">Пароль</label>
+            <input type="password" id="login-password" name="login-password" placeholder="••••••••" required>
+            <button type="submit">Войти</button>
+          </form>
+          <form id="register-form">
+            <label for="reg-name">Имя</label>
+            <input type="text" id="reg-name" name="reg-name" placeholder="Ваше имя" required>
+            <label for="reg-avatar">Аватар</label>
+            <input type="file" id="reg-avatar" name="reg-avatar" accept="image/*">
+            <img id="avatar-preview" alt="Превью аватара">
+            <label for="reg-email">Email</label>
+            <input type="email" id="reg-email" name="reg-email" placeholder="you@example.com" required>
+            <label for="reg-password">Пароль</label>
+            <input type="password" id="reg-password" name="reg-password" placeholder="••••••••" required>
+            <label for="reg-password-confirm">Повторите пароль</label>
+            <input type="password" id="reg-password-confirm" name="reg-password-confirm" placeholder="••••••••" required>
+            <button type="submit">Зарегистрироваться</button>
+          </form>
+        </div>
+      </div>
+  </main>
+
+  <footer>Тут ничего нет потому что</footer>
+
+  <script type="module" src="/src/scripts/auth.js"></script>
+</body>
+</html>
