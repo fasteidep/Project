@@ -1,0 +1,114 @@
+:root {
+  --bg: #fff;
+  --text: #222;
+  --text-muted: #666;
+  --primary: #222;
+  --secondary: #555;
+  --border-radius: 8px;
+  --transition: 0.4s ease;
+  --shadow-light: rgba(0,0,0,0.05);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.5;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+header {
+  display:flex; align-items:center;
+  padding:1rem 2rem;
+  background:var(--bg);
+  box-shadow:0 1px 4px var(--shadow-light);
+  position:sticky; top:0; z-index:10;
+}
+.logo { 
+    font-size:1.5rem; 
+    font-weight:bold; 
+}
+.logo a { 
+    color:var(--primary); 
+    text-decoration:none; 
+}
+main {
+  flex:1;
+  padding:2rem;
+  max-width:800px;
+  margin:0 auto;
+}
+h1 { font-size:1.75rem; margin-bottom:1rem; }
+form {
+  display:flex;
+  flex-direction:column;
+  gap:1.25rem;
+}
+label {
+  font-size:0.9rem;
+  color:var(--text-muted);
+}
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+  width:100%;
+  padding:0.75rem 1rem;
+  border:1px solid var(--secondary);
+  border-radius:var(--border-radius);
+  transition:border-color var(--transition);
+  font-size:1rem;
+  background: var(--bg);
+}
+input:focus, select:focus, textarea:focus {
+  outline:none;
+  border-color:var(--primary);
+}
+
+textarea {
+    resize:vertical;
+    min-height:120px; 
+}
+
+.image-input {
+  display:flex;
+  flex-direction:column;
+}
+
+.image-input input {
+  margin-bottom:0.5rem;
+}
+
+button {
+  align-self:flex-start;
+  padding:0.75rem 1.5rem;
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  border-radius:var(--border-radius);
+  cursor:pointer;
+  transition:background var(--transition), color var(--transition);
+  font-size:1rem;
+  margin:0 auto;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #bebebe;
+  color:var(--primary);
+}
+
+footer {
+  text-align:center;
+  padding:1rem;
+  font-size:0.8rem;
+  color:var(--text-muted);
+  border-top:1px solid var(--shadow-light);
+  margin-top:2rem;
+}
+
+@media(max-width:600px) {
+  main { padding:1rem; }
+}

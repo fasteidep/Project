@@ -20,7 +20,7 @@ async function loadProfile() {
 function renderProfile(user, ads) {
   const container = document.getElementById('profileContainer');
 
-  const isOwnProfile = authInstance.currentUser && 
+  const isOwnProfile = authInstance.currentUser &&
                        String(authInstance.currentUser.id) === String(user.id);
 
   let actionsHtml = '';
@@ -94,9 +94,11 @@ function renderProfile(user, ads) {
     });
   } else {
     const msgBtn = container.querySelector('.message-btn');
-    msgBtn.addEventListener('click', () => {
-      alert('Функция отправки сообщения пока не реализована');
-    });
+    if (msgBtn) {
+      msgBtn.addEventListener('click', () => {
+        alert('Это пока что нельзя сделать потому что');
+      });
+    }
   }
 }
 

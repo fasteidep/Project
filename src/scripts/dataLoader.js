@@ -2,20 +2,14 @@ const ACCOUNTS_JSON_PATH = '/src/data/accounts.json';
 const ADS_JSON_PATH     = '/src/data/ads.json';
 
 async function fetchJson(path) {
-  try {
-    const res = await fetch(path);
-    if (!res.ok) throw new Error(`HTTP error ${res.status}`);
-    return await res.json();
-  } catch (err) {
-    console.error(`Ошибка загрузки ${path}:`, err);
-    return [];
-  }
+  const res = await fetch(path);
+  if (!res.ok) throw new Error(`HTTP error ${res.status}`);
+  return await res.json();
 }
 
 export async function fetchAccounts() {
   const jsonAccounts = await fetchJson(ACCOUNTS_JSON_PATH);
   const local = JSON.parse(localStorage.getItem('accounts')) || [];
-
   return [...jsonAccounts, ...local];
 }
 
@@ -25,7 +19,9 @@ export async function fetchUserProfile(userId) {
 }
 
 export async function fetchAds() {
-  return await fetchJson(ADS_JSON_PATH);
+  const jsonAds = await fetchJson(ADS_JSON_PATH);
+  const localAds = JSON.parse(localStorage.getItem('ads')) || [];
+  return [...jsonAds, ...localAds];
 }
 
 export async function fetchUserAds(userId) {

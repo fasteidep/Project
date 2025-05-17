@@ -11,14 +11,14 @@ async function init() {
     try {
       allAds = await fetchAds();
       if(allAds.length === 0) {
-        adsContainer.innerHTML = '<p>Объявления не найдены</p>';
+        adsContainer.innerHTML = '<p>Объявления не найдены:(</p>';
         return;
       }
       renderAds(allAds);
       setupEventListeners();
     } catch (error) {
       console.error('Ошибка инициализации:', error);
-      adsContainer.innerHTML = '<p>Ошибка загрузки данных</p>';
+      adsContainer.innerHTML = '<p>Ничо не загрузилось:(</p>';
     }
 }
 
